@@ -615,10 +615,10 @@ def main():
         # ── Tabela principal ───────────────────────────────────────────────────
         st.subheader(f"📋 Relatório Final — {len(dv)} iten(s)")
 
-        styled = dv.style.applymap(
-            lambda v: CORES_STATUS_CSS.get(v, ""),
-            subset=["Status Operacional"]
-        )
+        styled = dv.style.map(
+    lambda v: CORES_STATUS_CSS.get(v, ""),
+    subset=["Status Operacional"]
+)
         st.dataframe(styled, use_container_width=True, height=520)
 
         # ── Download ───────────────────────────────────────────────────────────
